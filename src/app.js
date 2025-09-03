@@ -30,7 +30,6 @@ app.put("/users/:id", (req, res) => {
   users[index] = { ...users[index], ...req.body };
   res.json(users[index]);
 });
-
 app.delete("/users/:id", (req, res) => {
   const index = users.findIndex(u => u.id === Number(req.params.id));
   if (index === -1) return res.status(404).json({ message: "Not found" });
