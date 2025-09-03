@@ -8,6 +8,10 @@ let idCounter = 1;
 
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
+app.get("/", (req, res) => {
+  res.send("Hello from my Node.js backend on EC2!");
+});
+
 app.get("/users", (req, res) => {
   res.json(users);
 });
